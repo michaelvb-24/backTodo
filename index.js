@@ -7,7 +7,6 @@ const http = require("http");
 const server = http.createServer(app);
 
 const cors = require("cors");
-const port = 8000;
 
 const connection = mysql.createConnection({
   host: "sql7.freemysqlhosting.net",
@@ -107,9 +106,4 @@ app.post("/modifyTodo", (req, res) => {
       res.send(JSON.stringify(result[0]));
     });
   });
-});
-
-// Lancement du serveur Node.js
-app.listen(port, () => {
-  console.log(`Serveur Node.js écoutant sur le port ${port}`);
 });
